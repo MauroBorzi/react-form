@@ -32,14 +32,14 @@ const ArticlesList = () => {
               </li>
             })}
           </ol>
-          <div className="col-6">
+          <div className="col-6 mt-3">
             <form onSubmit={addArticle}>
               <input
                 type="text"
                 value={newArticle}
                 onChange={e => { setNewArticle(e.target.value) }}
               />
-              <button type="submit" className="btn btn-success">Aggiungi</button>
+              <button type="submit" className="btn btn-success mx-2">Aggiungi</button>
             </form>
           </div>
         </div>
