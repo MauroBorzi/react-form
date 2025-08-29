@@ -26,20 +26,22 @@ const ArticlesList = () => {
         <div className="col-6">
           <h2 className="text-center m-5">Articoli da viaggio</h2>
           <ol className="list-group list-group-numbered border border-primary">
-            {articlesList.map(art => {
-              return <li className="list-group-item border border-primary">
-                {art}
+            {articlesList.map((item, index) => {
+              return <li className="list-group-item border border-primary" key={index}>
+                {item}
               </li>
             })}
           </ol>
-          <form onSubmit={addArticle}>
-            <input
-              type="text"
-              value={newArticle}
-              onChange={e => { setNewArticle(e.target.value) }}
-            />
-            <button type="submit" class="btn btn-success">Aggiungi</button>
-          </form>
+          <div className="col-6">
+            <form onSubmit={addArticle}>
+              <input
+                type="text"
+                value={newArticle}
+                onChange={e => { setNewArticle(e.target.value) }}
+              />
+              <button type="submit" className="btn btn-success">Aggiungi</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
