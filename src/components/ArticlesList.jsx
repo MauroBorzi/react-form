@@ -8,8 +8,6 @@ const articlesList = [
   `libro`
 ]
 
-console.log(articlesList)
-
 const ArticlesList = () => {
 
   const [articles, setArticles] = useState(articlesList)
@@ -26,7 +24,7 @@ const ArticlesList = () => {
         <div className="col-6">
           <h2 className="text-center m-5">Articoli da viaggio</h2>
           <ol className="list-group list-group-numbered border border-primary">
-            {articlesList.map((item, index) => {
+            {articles.map((item, index) => {
               return <li className="list-group-item border border-primary" key={index}>
                 {item}
               </li>
@@ -37,7 +35,7 @@ const ArticlesList = () => {
               <input
                 type="text"
                 value={newArticle}
-                onChange={e => { setNewArticle(e.target.value) }}
+                onChange={e => setNewArticle(e.target.value)}
               />
               <button type="submit" className="btn btn-success mx-2">Aggiungi</button>
             </form>
